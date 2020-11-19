@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <title>Foglalás</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h1 name="top" style="font-family:fantasy; color: white;font-size: 60px; text-align: center">Szobáink:</h1>
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="panel panel-danger">
+        <div class="panel-heading">Standard szoba</div>
+        <div class="panel-body"><img src="standard.jpg" class="img-responsive" style="width:100%" alt="Standard szoba" title="Standard szoba"></div>
+        <div class="panel-footer">
+            
+            <p style="text-align: center">Alapár:&nbsp;<span id="ar">30000</span>&nbsp;Ft<p style="text-align: center">A szoba ára <input type="number" value="1" min="1" max="6" onchange="ar()" id="fo"> főre: </p><p style="text-align: center" id="arkiir">30000 Ft</p>
+          
+          </div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-danger">
+        <div class="panel-heading">Superior szoba</div>
+        <div class="panel-body"><img src="superior.jpg" class="img-responsive" style="width:100%" alt="Superior szoba" title="Superior szoba"></div>
+        <div class="panel-footer">
+          
+             <p style="text-align: center">Alapár:&nbsp;<span id="ar">40000</span>&nbsp;Ft<p style="text-align: center">A szoba ára <input type="number" value="1" min="1" max="6" onchange="ar()" id="fo"> főre: </p><p style="text-align: center" id="arkiir">40000 Ft</p>
+          
+          
+          
+          </div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-danger">
+        <div class="panel-heading">Junior szoba</div>
+        <div class="panel-body"><img src="junior.jpg" class="img-responsive" style="width:100%" alt="Junior szoba" title="Junior szoba"></div>
+        <div class="panel-footer">
+          
+          <p style="text-align: center">Alapár:&nbsp;<span id="ar">20000</span>&nbsp;Ft<p style="text-align: center">A szoba ára <input type="number" value="1" min="1" max="6" onchange="ar()" id="fo"> főre: </p><p style="text-align: center" id="arkiir">20000 Ft</p>
+          
+          
+          </div>
+      </div>
+    </div>
+  </div>
+</div> <br>
+    
+<div class="container">    
+  <div class="row">
+    <div class="col-sm-4"> 
+      <div class="panel panel-danger">
+        <div class="panel-heading">Deluxe szoba</div>
+        <div class="panel-body"><img src="deluxe.jpg" class="img-responsive" style="width:100%" alt="Deluxe szoba" title="Deluxe szoba"></div>
+        <div class="panel-footer">
+          
+          <p style="text-align: center">Alapár:&nbsp;
+              <span id="ar">50000</span>&nbsp;Ft</p>
+            <p style="text-align: center">A szoba ára 
+                <input type="number" value="1" min="1" max="6" onchange="ar()" id="fo"> főre: </p>
+            <p style="text-align: center" id="arkiir">50000 Ft</p> 
+            
+          </div>
+      </div>
+    </div>
+      <div class="col-sm-4">
+      <div class="panel panel-danger">
+          <div class="panel-heading">Akadálymentesített szoba</div>
+        <div class="panel-body"><img src="akadalymentes.jpg" class="img-responsive" style="width:100%" alt="Akadálymentesített szoba" title="Akadálymentesített szoba"></div>
+        <div class="panel-footer">
+         
+            <p style="text-align: center">Alapár:&nbsp;<span id="ar">30000</span>&nbsp;Ft<p style="text-align: center">A szoba ára <input type="number" value="1" min="1" max="6" onchange="ar()" id="fo"> főre: </p><p style="text-align: center" id="arkiir">30000 Ft</p>
+          
+          </div>
+      </div>
+    </div>
+    <div class="col-sm-4"> 
+      <div class="panel panel-danger">
+        <div class="panel-heading">Elnöki lakosztály</div>
+        <div class="panel-body"><img src="elnoki.jpg" class="img-responsive" style="width:100%" alt="Elnöki lakosztály" title="Elnöki lakosztály"></div>
+        <div class="panel-footer">
+          
+            <p style="text-align: center">Alapár:&nbsp;<span id="ar">100000</span>&nbsp;Ft<p style="text-align: center">A szoba ára <input type="number" value="1" min="1" max="6" onchange="ar()" id="fo"> főre: </p><p style="text-align: center" id="arkiir">100000 Ft</p>
+          
+          </div>
+      </div>
+    </div>
+  </div>
+</div> <br>
+    
+<style>
+    html
+    {
+        height: 100%;
+        margin: 0;
+    }
+    
+    body
+    {
+        height: 100%;
+        margin: 0;
+        background-image:url(hatter.jpg);
+    }
+</style>
+<script>
+    function ar()
+    {
+       var i = document.querySelectorAll('.panel-footer');
+        
+        for(const element of i)
+        {
+            var childelements = element.children;
+             var alapar =childelements[0].children[0].innerText;
+    
+                childelements[2].innerText = parseInt(alapar)+(childelements[1].children[0].value-1)*10000+" Ft";        
+        }      
+    }
+    ar();
+</script>
+    
+    </body>
+</html>
